@@ -3,8 +3,8 @@ title: "Abacavirinol"
 author: "Samantha Lee"
 date: "Fall 2018"
 output:
-  word_document: default
   html_document: default
+  word_document: default
 ---
 
 ```{r include=FALSE,echo=FALSE}
@@ -40,10 +40,12 @@ A new  preventative aides (abacavirinol) is under test in clinical trials. Analy
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-To decide the effectiveness of the drug, we will determine whether there is a difference among the amount of people who were infected that received the drug and that recieved the placebo, between the males and females, drug users and non-drug users, and LBGT and non-LBGT people.
+To decide the effectiveness of abacavirinol, we will determine whether there is a difference among the amount of people who were infected that received abacavirinol and that recieved the placebo, between the males and females, drug users and non-drug users, and LBGT and non-LBGT people.
 
 
-#### Chapter 1 Effectiveness of drug
+#### Chapter 1 Overlall effectiveness of abacavirinol.
+
+For this chapter, will will look at the overall effectiveness of abacavirinol with all groups invloved in the test.
 
 #Results
 
@@ -54,6 +56,10 @@ To decide the effectiveness of the drug, we will determine whether there is a di
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+
+We will now look at a barchart to determine the overall effectiveness of the drug. Those who hve recived abacavirinol appear to have been less likely to recieve the aids virus since there are less inividuals in the collumn of those who recieved the drug and got aids then there are in the collumn of those who recieved the placebo and got aids.
+
 
 
 ```{r}
@@ -68,6 +74,9 @@ barchartGC(~infected + treatment, data=abac, type = "percent")
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+Now we will look at a table of the percentage of those who received the drug and got aids versus the percentage of those who recieved the placebo and got aids.  Looking at the collumn percentages, people who recieved abacavirinol only made up 40.93 percent of the people who got aids whis is 18.14 percent less than the people who got aids and who recieved the placebo (59.07 percent).
+
+
 ```{r}
 tab1 =xtabs(~treatment+infected, data=abac)
 rowPerc(tab1)
@@ -78,6 +87,13 @@ colPerc(tab1)
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
+$H_0$ The number of people who take abacavirinol and recieved aids ≥ 50%.
+
+$H_a$ The number of people who take abacavirinol and recieved < 50%.
+
+
+We will now run a Chi-squared test and a Fisher's exact test to determine the significance of this data.  The P-value is .0168; since it is lower than .05 we reject the null hypothesis and accept the alternative.
 
 ```{r}
 chisq.test(tab1)
@@ -90,7 +106,13 @@ fisher.test(tab1)
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-#### Chapter 2 Effectiveness with LBGT individuals
+
+According to our graphical and nummerical results, less people who took abacavirinol contracted the aids virus than those who recieved the placebo. Since the P-value is .0168, which is less than .05, we reject the null hypothesis and consider the results statistaclly significant. The significance of the results leads us to believe that, for everyone in the study together, the drug does help to prevent the contraction of aids.
+
+
+#### Chapter 2 Abacavirinol effectiveness with LBGT individuals
+
+For this chapter, will now look at the effectiveness of abacavirinol with individuals who identify as LBGT.
 
 # Methods
 
@@ -104,6 +126,7 @@ fisher.test(tab1)
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
+We will now create a barchart to compare the amount of people who contracted the aids virus after recieving abacavirinol to those who recieved the placebo. Looking at the results, more people contracted the aids virus who recieved the drug than those who recieved the placebo.  Abacavirinol appears to be having the opposite effect than intended.
 
 ```{r}
 barchartGC(~infected + treatment, data=LBGTguys, type = "percent")
@@ -117,6 +140,9 @@ barchartGC(~infected + treatment, data=LBGTguys, type = "percent")
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+We will now create a table of the perecent of those who recieved abacavirinol and contracted aids to those who recieved the placebo and contracted aids.  Looking at the collumn percent, 68.97 percent of those who recieved aids had recieved abacavirinol while the people who recieved the placebo only made up 31.03 percent of those infected.
+
+
 ```{r}
 tab2 =xtabs(~treatment+infected, data=LBGTguys)
 rowPerc(tab2)
@@ -128,6 +154,13 @@ colPerc(tab2)
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+
+$H_0$ The number of people who take abacavirinol and recieved aids ≥ 50%.
+
+$H_a$ The number of people who take abacavirinol and recieved < 50%.
+
+We will now run a Chi-squared test and a Fisher's exact test to determine the significance of these results.  The P-value is .0743.  The P-value is more than .05 so we fail to reject the null hypothesis.
+
 ```{r}
 chisq.test(tab2)
 chisqtestGC(tab2)
@@ -135,12 +168,17 @@ fisher.test(tab2)
 ```
 
 
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
+Looking at our graphical and numerical test results, abacavirinol had the opposite effect than intended with more LBGT individuals contracting the aids virus than those who recieved the placebo.  Since the P-value is .0743, which is greater than .05, we fail to reject the null hypothesis and consider the test statistically insignificant.
 
-#### Chapter 3 drug effectiveness with men
+
+#### Chapter 3 Abacavirinol effectiveness with men
+
+For this chapter, we will look at the effectiveness of abacavirinol with men.
 
 # Methods
 
@@ -154,6 +192,7 @@ fisher.test(tab2)
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
+We will now create a bargraph to compare the amount of men who contracted aids after recieving abacavirinol compared to those who recieved the placebo.  Looking at the chart, it appears men who recieved abacavirinol contracted aids less than those who received the placebo. Abacavirinol appears to be working for men.
 
 ```{r}
 barchartGC(~infected + treatment, data=males, type = "percent")
@@ -177,6 +216,14 @@ colPerc(tab3)
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
+
+$H_0$ The number of people who take abacavirinol and recieved aids ≥ 50%.
+
+$H_a$ The number of people who take abacavirinol and recieved < 50%. 
+
+
+
 
 ```{r}
 chisq.test(tab3)
@@ -229,6 +276,13 @@ colPerc(tab4)
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+
+$H_0$ 
+
+$H_a$ 
+
+
+
 ```{r}
 chisq.test(tab4)
 chisqtestGC(tab4)
@@ -276,6 +330,16 @@ colPerc(tab5)
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
+
+$H_0$ The number of people who take abacavirinol and recieved aids ≥ 50%.
+
+$H_a$ The number of people who take abacavirinol and recieved < 50%.
+
+
+
+
+
 
 ```{r}
 chisq.test(tab5)
