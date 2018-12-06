@@ -40,14 +40,14 @@ A new  preventative aides (abacavirinol) is under test in clinical trials. Analy
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-To decide the effectiveness of abacavirinol, we will determine whether there is a difference among the amount of people who were infected that received abacavirinol and that recieved the placebo, between the males and females, drug users and non-drug users, and LBGT and non-LBGT people.
+To decide the effectiveness of abacavirinol, we will determine the effectiveness of abacavirinol with all people, with men, with women, with individuals who identify as LBGT, and with drug users.
 
 
-#### Chapter 1 Overlall effectiveness of abacavirinol.
+# Chapter 1 Overlall effectiveness of abacavirinol.
 
 For this chapter, will will look at the overall effectiveness of abacavirinol with all groups invloved in the test.
 
-#Results
+## Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -58,7 +58,7 @@ For this chapter, will will look at the overall effectiveness of abacavirinol wi
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
 
-We will now look at a barchart to determine the overall effectiveness of the drug. Those who hve recived abacavirinol appear to have been less likely to recieve the aids virus since there are less inividuals in the collumn of those who recieved the drug and got aids then there are in the collumn of those who recieved the placebo and got aids.
+We will now look at a barchart to determine the overall effectiveness of abacavirinol. Since the collumn that contains people who recieved abacavirinol and contracted aids is smaller than the collumn that contains people who recieved abacavirinol and contracted aids, abacavirinol appears to be working.
 
 
 
@@ -74,7 +74,7 @@ barchartGC(~infected + treatment, data=abac, type = "percent")
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
-Now we will look at a table of the percentage of those who received the drug and got aids versus the percentage of those who recieved the placebo and got aids.  Looking at the collumn percentages, people who recieved abacavirinol only made up 40.93 percent of the people who got aids whis is 18.14 percent less than the people who got aids and who recieved the placebo (59.07 percent).
+Now we will look at a table of the percentage of those who received abacavirinol and contracted aids compared to the percentage of those who recieved the placebo and contracted aids.  Looking at the collumn percentages, people who recieved abacavirinol only made up 40.93 percent of the people who got aids which is 18.14 percent less than the people who got aids and who recieved the placebo (59.07 percent).
 
 
 ```{r}
@@ -102,20 +102,20 @@ fisher.test(tab1)
 ```
 
 
-# Discussion and Conclusion
+## Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
 
-According to our graphical and nummerical results, less people who took abacavirinol contracted the aids virus than those who recieved the placebo. Since the P-value is .0168, which is less than .05, we reject the null hypothesis and consider the results statistaclly significant. The significance of the results leads us to believe that, for everyone in the study together, the drug does help to prevent the contraction of aids.
+According to our graphical and nummerical results, less people who took abacavirinol contracted the aids virus than those who recieved the placebo. Since the P-value is .0168, which is less than .05, we reject the null hypothesis and accept the alternative. The significance of the results leads us to believe that, for everyone in the study together, abacavirinol does help to prevent the contraction of aids.
 
 
-#### Chapter 2 Abacavirinol effectiveness with LBGT individuals
+# Chapter 2 Abacavirinol effectiveness with LBGT individuals
 
 For this chapter, will now look at the effectiveness of abacavirinol with individuals who identify as LBGT.
 
 
-#Results
+## Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -139,7 +139,7 @@ barchartGC(~infected + treatment, data=LBGTguys, type = "percent")
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
-We will now create a table of the perecent of those who recieved abacavirinol and contracted aids to those who recieved the placebo and contracted aids.  Looking at the collumn percent, 68.97 percent of those who recieved aids had recieved abacavirinol while the people who recieved the placebo only made up 31.03 percent of those infected.
+We will now create a table of the perecentage of those who recieved abacavirinol and contracted aids to those who recieved the placebo and contracted aids.  Looking at the collumn percent, 68.97 percent of those who contracted aids had recieved abacavirinol while the people who recieved the placebo only made up 31.03 percent of those infected.
 
 
 ```{r}
@@ -168,18 +168,18 @@ fisher.test(tab2)
 
 
 
-# Discussion and Conclusion
+## Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-Looking at our graphical and numerical test results, abacavirinol had the opposite effect than intended with more LBGT individuals contracting the aids virus than those who recieved the placebo.  Since the P-value is .0743, which is greater than .05, we fail to reject the null hypothesis and consider the test statistically insignificant.
+Looking at our graphical and numerical test results, abacavirinol had the opposite effect than intended with more LBGT individuals contracting the aids virus than those who recieved the placebo.  Since the P-value is .0743, which is greater than .05, we fail to reject the null hypothesis. This supports abacavirinol not working with LBGT individuals.
 
 
-#### Chapter 3 Abacavirinol effectiveness with men
+# Chapter 3 Abacavirinol effectiveness with men
 
 For this chapter, we will look at the effectiveness of abacavirinol with men.
 
-#Results
+##Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -189,7 +189,7 @@ For this chapter, we will look at the effectiveness of abacavirinol with men.
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
-We will now create a bargraph to compare the amount of men who contracted aids after recieving abacavirinol compared to those who recieved the placebo.  Looking at the chart, it appears men who recieved abacavirinol contracted aids less than those who received the placebo. Abacavirinol appears to be working for men.
+We will now create a bargraph to compare the amount of men who contracted aids after recieving abacavirinol compared to those who recieved the placebo.  Looking at the chart, men who recieved abacavirinol contracted aids less than those who received the placebo. Abacavirinol appears to be working for men.
 
 ```{r}
 barchartGC(~infected + treatment, data=males, type = "percent")
@@ -232,19 +232,19 @@ fisher.test(tab3)
 ```
 
 
-# Discussion and Conclusion
+## Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
 
-Looking at the graphical and numerical results, it would appear that abacavirinol works for the men since less men who recieved abacavirinol contracted aids than those who received the placebo.  Since the P-value is 6.052-e06 which is less than .05, we rejected the null hypothesis and accepted the null, supporting abacavirinol working for men.
+Looking at the graphical and numerical results, abacavirinol works for the men since less men who recieved abacavirinol contracted aids than those who received the placebo.  Since the P-value is 6.052-e06 which is less than .05, we rejected the null hypothesis and accepted the null, supporting abacavirinol working for men.
 
 
-#### Chapter 4 Effectiveness with women
+# Chapter 4 Effectiveness with women
 
 For this chapter, we will look at the effectiveness of abacavirinol with women.
 
-#Results
+##Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -254,7 +254,7 @@ For this chapter, we will look at the effectiveness of abacavirinol with women.
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
-We will now create a barchat to compare the amount of women who received abacavirinol and contracted aids with the amount of women who recieved the placebo and contracted aids. Looking at the chart, it appears that more women who received abacavirinol contracted aids than those who received the placebo. Abacavirinol seems to be having the opposite effect than intended.
+We will now create a barchat to compare the amount of women who received abacavirinol and contracted aids with the amount of women who recieved the placebo and contracted aids. Looking at the chart, women who received abacavirinol contracted aids than those who received the placebo. Abacavirinol seems to be having the opposite effect than intended.
 
 
 ```{r}
@@ -269,7 +269,7 @@ barchartGC(~infected + treatment, data=females, type = "percent")
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
-We will now create a table to compare the amount of women who recieved abacavirinol and contracted aids to those who recieved the placebo and contracted aids.  Looking at the collumn percent, 59.3 percent of the women who recieved abacavirinol contracted aids while 40.7 percent of the women who recieved the placebo contracted aids. 18.6 percent more women who recieved abacavirinol contracted aids than women who recieved the placebo.
+We will now create a table to compare the amount of women who recieved abacavirinol and contracted aids to those who recieved the placebo and contracted aids.  Looking at the collumn percent of women who contracted aids, 59.3 percent of the women who recieved abacavirinol contracted aids while 40.7 percent of the women who recieved the placebo contracted aids. 18.6 percent more women who recieved abacavirinol contracted aids than women who recieved the placebo.
 
 
 ```{r}
@@ -288,7 +288,7 @@ $H_0$ The number of women who take abacavirinol and recieved aids ≥ 50%.
 
 $H_a$ The number of women who take abacavirinol and recieved aids < 50%.
 
-
+We will now run a Chi-squared test and a Fisher's exact test to determine the significance of these results.  The P-value is .06195. Since it is greater than .05, we fail to rejec the null hypothesis. This supports that the drug does not work with women.
 
 ```{r}
 chisq.test(tab4)
@@ -297,18 +297,18 @@ fisher.test(tab4)
 ```
 
 
-# Discussion and Conclusion
+## Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
+Looking at the graphical and numerical results, the drug is having the opposite of the intended effect on women.  The inferential results determined we fail to reject the null, supporting that this drug is not effective for women.
 
-#### Chapter 5 Effectiveness with drug users
+# Chapter 5 Effectiveness with drug users
 
 For this chapter, will observe the effectiveness of abacavirinol with drug users.
 
-# Methods
 
-#Results
+##Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -318,7 +318,7 @@ For this chapter, will observe the effectiveness of abacavirinol with drug users
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
-We will now create a barchart to compare the number of drug users who recieved abacavirinol and contracted aids with drug users who recieved the placebo and contracted aids. Looking at the chart, less drug users who recieved abacavirinol contracted aids than that recieved the placebo.  The drug appears to be working.
+We will now create a barchart to compare the number of drug users who recieved abacavirinol and contracted aids with drug users who recieved the placebo and contracted aids. Looking at the chart, less drug users who recieved abacavirinol contracted aids than that recieved the placebo. Abacavirinol appears to be working.
 
 ```{r}
 barchartGC(~infected + treatment, data=IVuser, type = "percent")
@@ -360,8 +360,8 @@ fisher.test(tab5)
 ```
 
 
-# Discussion and Conclusion
+## Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-Looking at the graphical and numerical results, it appears abacavirinol is working since less drug users who recieved abacavirinol contracted aids than that recieved the placebo.  The inferential results supports this since the P-value is .02266, less than .05.
+Looking at the graphical and numerical results, abacavirinol is working since less drug users who recieved abacavirinol contracted aids than that recieved the placebo.  The inferential results supports this since the P-value is .02266, less than .05.
